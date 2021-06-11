@@ -5,13 +5,15 @@
       `button`,
       variant === undefined ? `clear` : variant,
       color === undefined ? `default` : color,
+      variant === undefined && color === undefined && `clearDefault`,
       variant === undefined && color === `primary` && `clearPrimary`,
       variant === undefined && color === `secondary` && `clearSecondary`,
       variant === undefined && color === `warning` && `clearWarning`,
       variant === undefined && color === `info` && `clearInfo`,
       variant === undefined && color === `error` && `clearError`,
       variant === undefined && color === `success` && `clearSuccess`,
-      size === undefined ? `medium` : size,
+      size === undefined ? `` : size,
+      iconSize === undefined ? `` : iconSize,
       disabled && `disabled`,
       circle && `circle`,
       rounded && `rounded`,
@@ -19,6 +21,7 @@
       !elevation && `elevation`,
     ]"
     :disabled="disabled"
+    :title="title"
     v-on="$listeners"
   >
     <font-awesome-icon v-if="icon !== undefined" :icon="icon" class="icon" />
@@ -33,7 +36,9 @@
 <script>
 export default {
   props: {
+    title: String,
     elevation: Boolean,
+    iconSize: String,
     size: String,
     variant: String,
     color: String,
@@ -41,9 +46,6 @@ export default {
     rounded: Boolean,
     icon: String,
     disabled: Boolean,
-  },
-  created() {
-    console.log(this.$slots.default);
   },
 };
 </script>
@@ -53,10 +55,20 @@ export default {
   --padding-small: 4px 10px;
   --padding-medium: 6px 16px;
   --padding-large: 8px 22px;
-  position: relative;
+  --padding-icon-xsmall: 5px;
+  --padding-icon-small: 10px;
+  --padding-icon-medium: 15px;
+  --padding-icon-large: 20px;
+  --padding-icon-xlarge: 25px;
+  --text-icon-xsmall: 0.25rem;
+  --text-icon-small: 0.5rem;
+  --text-icon-medium: 1rem;
+  --text-icon-large: 1.5rem;
+  --text-icon-xlarge: 2rem;
   overflow: hidden;
   text-transform: uppercase;
-  width: max-content;
+  min-width: 25px;
+  min-height: 25px;
   outline: 0;
   border: 0;
   box-sizing: border-box;
@@ -80,6 +92,41 @@ export default {
 
 .large {
   padding: var(--padding-large);
+}
+
+.icon {
+  min-width: 25px;
+  min-height: 25px;
+}
+
+.icon * {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-xsmall {
+  font-size: var(--text-icon-xsmall);
+  padding: var(--padding-icon-xsmall);
+}
+
+.icon-small {
+  font-size: var(--text-icon-small);
+  padding: var(--padding-icon-small);
+}
+
+.icon-medium {
+  font-size: var(--text-icon-medium);
+  padding: var(--padding-icon-medium);
+}
+
+.icon-large {
+  font-size: var(--text-icon-large);
+  padding: var(--padding-icon-large);
+}
+
+.icon-xlarge {
+  font-size: var(--text-icon-xlarge);
+  padding: var(--padding-icon-xlarge);
 }
 
 .elevation {
@@ -147,6 +194,14 @@ export default {
 .outline {
   color: var(--text-light-primary);
   background-color: rgba(0, 0, 0, 0);
+}
+
+.clearDefault {
+  color: var(--text-light-primary);
+  border: none;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
 }
 
 .clearPrimary {
@@ -283,6 +338,14 @@ export default {
   background-color: var(--info-dark);
   background-size: 100%;
   transition: background 0s;
+}
+
+.clearDefault:hover {
+  color: var(--text-light-primary);
+  border: none;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
 }
 
 .circle {

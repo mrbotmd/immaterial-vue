@@ -1,0 +1,52 @@
+:root{
+
+  --primary-light: #4791db;
+  --primary-main: #1976d2;
+  --primary-dark: #115293;
+  --secondary-light: #e33371;
+  --secondary-main: #dc004e;
+  --secondary-dark: #9a0036;
+  --error-light: #e57373;
+  --error-main: #f44336;
+  --error-dark: #d32f2f;
+  --warning-light: #ffb74d;
+  --warning-main: #ff9800;
+  --warning-dark: #f57c00;
+  --info-light: #64b5f6;
+  --info-main: #2196f3;
+  --info-dark: #1976d2;
+  --success-light: #81c784;
+  --success-main: #4caf50;
+  --success-dark: #388e3c;
+  
+  --text-dark-primary: #fff;
+  --text-dark-secondary: rgba(255, 255, 255, 0.7);
+  --text-dark-disabled: rgba(255, 255, 255, 0.5);
+
+  --button-default: #e0e0e0;
+  --button-dark-active: #fff;
+  --button-dark-hover: rgba(255, 255, 255, 0.08);
+  --button-dark-selected: rgba(255, 255, 255, 0.16);
+  --button-dark-disabled: rgba(255, 255, 255, 0.3);
+  --button-dark-disabled-background: rgba(255, 255, 255, 0.12);
+
+  --background-dark-default: #303030;
+  --background-dark-paper: #424242;
+
+  --diveder-dark: rgba(255, 255, 255, 0.12);
+
+  --text-light-primary: rgba(0, 0, 0, 0.87);
+  --text-light-secondary: rgba(0, 0, 0, 0.54);
+  --text-light-disabled: rgba(0, 0, 0, 0.38);
+
+  --button-light-active: rgba(0, 0, 0, 0.54);
+  --button-light-hover: rgba(0, 0, 0, 0.04);
+  --button-light-selected: rgba(0, 0, 0, 0.08);
+  --button-light-disabled: rgba(0, 0, 0, 0.26);
+  --button-light-disabled-background: rgba(0, 0, 0, 0.12);
+
+  --background-light-default: #fafafa;
+  --background-light-paper: #fff;
+
+  --diveder-light: rgba(0, 0, 0, 0.12);
+}
